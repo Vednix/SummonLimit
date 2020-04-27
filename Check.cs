@@ -122,7 +122,7 @@ namespace SummonLimit
       else
       {
         TShock.Log.Info($"{player.Name} was kicked for repeatedly exceeding minion limit of {max} minions.");
-        TShock.Utils.Kick(player, $"{KickMessage} ({max})", true);
+        player.Kick($"{KickMessage} ({max})", true);
       }
     }
 
