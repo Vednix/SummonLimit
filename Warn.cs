@@ -14,12 +14,10 @@ namespace SummonLimit
     /// </summary>
     internal const ushort WarnMinutes = 20;
 
-    /// <summary>
-    ///   Message to warn the user with.
-    /// </summary>
-    internal const string WarnMessage = KickMessage +
-                                        " You will be kicked if you don't cease exceeding the maximum allowed number of {1}. "
-                                        + "[c/ff9939:({0} {1}s)]";
+        /// <summary>
+        ///   Message to warn the user with.
+        /// </summary>
+        internal const string WarnMessage = "[AntiCheat] Minion Cheating detectado.";
 
     /// <summary>
     ///   Contains the IP addresses and the time they were warned.
@@ -50,6 +48,7 @@ namespace SummonLimit
 
       player.Disable(WarnMessage);
       player.SendErrorMessage(WarnMessage, player.Group.GetDynamicPermission(Permission));
+            TShock.sendMessageDC(player.Name, message: "Minion Cheating detectado.", logversion: 1, channel: "capturados");
 
       foreach (var proj in Main.projectile.Where(p => p != null &&
                                                       p.active &&

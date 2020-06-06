@@ -30,11 +30,11 @@ namespace SummonLimit
     private static readonly int[] Sentries =
     {
       SpiderHiver, MoonlordTurret, // queen spider staff & lunar portal staff
-      FrostHydra, RainbowCrystal,
-      DD2BallistraTowerT1, DD2BallistraTowerT2, DD2BallistraTowerT3,
-      DD2LightningAuraT1, DD2LightningAuraT2, DD2LightningAuraT3,
-      DD2FlameBurstTowerT1, DD2FlameBurstTowerT2, DD2FlameBurstTowerT3,
-      DD2ExplosiveTrapT1, DD2ExplosiveTrapT2, DD2ExplosiveTrapT3
+      FrostHydra, RainbowCrystal/*,*/
+      //DD2BallistraTowerT1, DD2BallistraTowerT2, DD2BallistraTowerT3,
+      //DD2LightningAuraT1, DD2LightningAuraT2, DD2LightningAuraT3,
+      //DD2FlameBurstTowerT1, DD2FlameBurstTowerT2, DD2FlameBurstTowerT3,
+      //DD2ExplosiveTrapT1, DD2ExplosiveTrapT2, DD2ExplosiveTrapT3
     };
 
     /// <summary>
@@ -116,13 +116,13 @@ namespace SummonLimit
 
       if (!IsWarned(player))
       {
-        TShock.Log.Info($"{player.Name} was warned for exceeding minion limit of {max} minions.");
+        TShock.Log.Info($"{player.Name} foi avisado sobre seu limite anormal de minions. Máximo: {max}.");
         Warn(player);
       }
       else
       {
-        TShock.Log.Info($"{player.Name} was kicked for repeatedly exceeding minion limit of {max} minions.");
-        TShock.Utils.Kick(player, $"{KickMessage} ({max})", true);
+        TShock.Log.Info($"{player.Name} foi expulso pelo seu limite anormal de minions.");
+        TShock.Utils.Kick(player, $"Minions Cheating", true);
       }
     }
 
